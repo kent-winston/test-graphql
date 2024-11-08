@@ -1,0 +1,33 @@
+type User {
+    id: ID!
+    email: String!
+    name: String!
+    created_at: Time!
+    updated_at: Time
+    deleted_at: Time
+}
+
+input NewUser {
+    email: String!
+    password: String!
+    name: String!
+}
+
+input LoginInput {
+    email: String!
+    password: String!
+}
+
+type LoginResponse {
+    token: String!
+    user: User!
+}
+
+type UserOps {
+    register(input: NewUser!): String! @goField(forceResolver: true)
+    login(input: LoginInput!): LoginResponse! @goField(forceResolver: true)
+}
+
+type UserQuery {
+    me: User! @goField(forceResolver: true) @isLogin
+}

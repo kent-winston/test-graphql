@@ -1,0 +1,3 @@
+directive @goField(forceResolver: Boolean, name: String) on INPUT_FIELD_DEFINITION| FIELD_DEFINITION
+
+directive @isLogin on FIELD_DEFINITION

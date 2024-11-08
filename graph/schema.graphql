@@ -1,0 +1,9 @@
+scalar Time
+
+type Query {
+  user: UserQuery! @goField(forceResolver: true)
+}
+
+type Mutation {
+  user: UserOps! @goField(forceResolver: true)
+}
